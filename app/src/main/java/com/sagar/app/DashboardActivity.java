@@ -140,7 +140,7 @@ public class DashboardActivity extends AppCompatActivity {
         navMusic.setOnClickListener(v -> {
             setActiveNavItem(navMusic);
             new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {
-                Intent intent = new Intent(DashboardActivity.this, MusicActivity.class);
+                Intent intent = new Intent(DashboardActivity.this, ChallengesActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();

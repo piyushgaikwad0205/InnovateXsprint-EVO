@@ -396,7 +396,7 @@ public class MainActivity extends AppCompatActivity {
         navMusic.setOnClickListener(v -> {
             setActiveNavItem(navMusic);
             new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {
-                android.content.Intent intent = new android.content.Intent(MainActivity.this, MusicActivity.class);
+                android.content.Intent intent = new android.content.Intent(MainActivity.this, ChallengesActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();

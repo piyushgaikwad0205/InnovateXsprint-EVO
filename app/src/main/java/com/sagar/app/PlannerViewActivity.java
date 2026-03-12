@@ -203,7 +203,7 @@ public class PlannerViewActivity extends AppCompatActivity {
         if (navMusic != null) {
             navMusic.setOnClickListener(v -> {
                 setActiveNavItem(navMusic);
-                Intent intent = new Intent(PlannerViewActivity.this, MusicActivity.class);
+                Intent intent = new Intent(PlannerViewActivity.this, ChallengesActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.nav_fade_in, R.anim.nav_fade_out);
                 finish();

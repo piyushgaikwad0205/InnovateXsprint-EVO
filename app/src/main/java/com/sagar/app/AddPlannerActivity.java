@@ -123,7 +123,7 @@ public class AddPlannerActivity extends AppCompatActivity {
 
         navMusic.setOnClickListener(v -> {
             setActiveNavItem(navMusic);
-            Intent intent = new Intent(AddPlannerActivity.this, MusicActivity.class);
+            Intent intent = new Intent(AddPlannerActivity.this, ChallengesActivity.class);
             startActivity(intent);
             overridePendingTransition(0, 0);
             finish();

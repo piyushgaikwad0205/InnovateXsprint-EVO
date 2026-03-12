@@ -440,7 +440,15 @@ public class MusicActivity extends AppCompatActivity {
                 finish();
             }, 120);
         });
-        navMusic.setOnClickListener(v -> setActiveNavItem(navMusic));
+        navMusic.setOnClickListener(v -> {
+            setActiveNavItem(navMusic);
+            new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {
+                android.content.Intent intent = new android.content.Intent(MusicActivity.this, ChallengesActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }, 120);
+        });
         navAbout.setOnClickListener(v -> {
             setActiveNavItem(navAbout);
             new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {

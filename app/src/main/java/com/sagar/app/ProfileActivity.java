@@ -116,7 +116,7 @@ public class ProfileActivity extends AppCompatActivity {
         navMusic.setOnClickListener(v -> {
             setActiveNavItem(navMusic);
             new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {
-                android.content.Intent intent = new android.content.Intent(ProfileActivity.this, MusicActivity.class);
+                android.content.Intent intent = new android.content.Intent(ProfileActivity.this, ChallengesActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();

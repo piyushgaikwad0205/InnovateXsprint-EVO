@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- YouTube-style play button icon -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FF0000"
+        android:pathData="M21.58,7.19C21.35,6.33 20.68,5.65 19.82,5.42C18.25,5 12,5 12,5
+            S5.75,5 4.18,5.42C3.32,5.65 2.65,6.33 2.42,7.19
+            C2,8.77 2,12 2,12S2,15.23 2.42,16.81
+            C2.65,17.67 3.32,18.35 4.18,18.58C5.75,19 12,19 12,19
+            S18.25,19 19.82,18.58C20.68,18.35 21.35,17.67 21.58,16.81
+            C22,15.23 22,12 22,12S22,8.77 21.58,7.19Z"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M10,15L15.19,12L10,9V15Z"/>
+</vector>
