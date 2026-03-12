@@ -25,7 +25,7 @@ public class PlannerActivity extends AppCompatActivity {
     private TextView tvHomeLabel, tvPlannerLabel, tvMusicLabel, tvAboutLabel;
 
     private LinearLayout activeTasksContainer, completedTasksContainer;
-    private TextView tvTodayDate, tabDailyTasks, tabTourReminders;
+    private TextView tvTodayDate, tabDailyTasks, tabAiStudyPlan;
     private String currentFilterType = "TASK"; // "TASK" or "TOUR"
     private FirebaseHelper firebaseHelper;
 
@@ -212,7 +212,7 @@ public class PlannerActivity extends AppCompatActivity {
         activeTasksContainer = findViewById(R.id.activeTasksContainer);
         completedTasksContainer = findViewById(R.id.completedTasksContainer);
         tabDailyTasks = findViewById(R.id.tabDailyTasks);
-        tabTourReminders = findViewById(R.id.tabTourReminders);
+        tabAiStudyPlan = findViewById(R.id.tabAiStudyPlan);
         tvTodayDate = findViewById(R.id.tvTodayDate);
     }
 
@@ -225,18 +225,17 @@ public class PlannerActivity extends AppCompatActivity {
             });
         }
 
-        if (tabTourReminders != null) {
-            tabTourReminders.setOnClickListener(v -> {
-                currentFilterType = "TOUR";
-                updateTabUI();
-                loadTasksFromFirebase();
+        if (tabAiStudyPlan != null) {
+            tabAiStudyPlan.setOnClickListener(v -> {
+                startActivity(new Intent(PlannerActivity.this, StudyScheduleActivity.class));
+                overridePendingTransition(0, 0);
             });
         }
         updateTabUI(); // Call initially to set the correct UI state
     }
 
     private void updateTabUI() {
-        if (tabDailyTasks == null || tabTourReminders == null)
+        if (tabDailyTasks == null || tabAiStudyPlan == null)
             return;
 
         if (currentFilterType.equals("TASK")) {
@@ -244,18 +243,17 @@ public class PlannerActivity extends AppCompatActivity {
             tabDailyTasks.setTextColor(Color.BLACK);
             tabDailyTasks.setTypeface(null, android.graphics.Typeface.BOLD);
 
-            tabTourReminders.setBackground(null);
-            tabTourReminders.setTextColor(Color.parseColor("#888888"));
-            tabTourReminders.setTypeface(null, android.graphics.Typeface.NORMAL);
+            tabAiStudyPlan.setBackgroundResource(R.drawable.task_badge_bg_light);
+            tabAiStudyPlan.setTextColor(Color.parseColor("#555555"));
+            tabAiStudyPlan.setTypeface(null, android.graphics.Typeface.BOLD);
         } else {
-            tabTourReminders.setBackgroundResource(R.drawable.task_badge_bg);
-            tabTourReminders.setTextColor(Color.BLACK);
-            tabTourReminders.setTypeface(null, android.graphics.Typeface.BOLD);
-
             tabDailyTasks.setBackground(null);
             tabDailyTasks.setTextColor(Color.parseColor("#888888"));
             tabDailyTasks.setTypeface(null, android.graphics.Typeface.NORMAL);
         }
+            tabAiStudyPlan.setBackgroundResource(R.drawable.task_badge_bg);
+            tabAiStudyPlan.setTextColor(Color.BLACK);
+            tabAiStudyPlan.setTypeface(null, android.graphics.Typeface.BOLD);
     }
 
     private void setupBottomNavigation() {
@@ -272,10 +270,8 @@ public class PlannerActivity extends AppCompatActivity {
         navPlanner.setOnClickListener(v -> {
             setActiveNavItem(navPlanner);
             new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {
-                Intent intent = new Intent(PlannerActivity.this, AddPlannerActivity.class);
-                startActivity(intent);
-                overridePendingTransition(0, 0);
-                finish();
+                // Already on planner; keep user here to access tabs
+                // No navigation needed
             }, 120);
         });
 

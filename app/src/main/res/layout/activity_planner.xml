@@ -65,7 +65,7 @@
                 android:orientation="vertical"
                 android:padding="24dp">
 
-                <!-- Today's Section -->
+                <!-- Today's Section / Tabs -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -74,29 +74,33 @@
                     android:layout_marginBottom="24dp">
                     <TextView
                         android:id="@+id/tabDailyTasks"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
                         android:background="@drawable/task_badge_bg"
                         android:paddingHorizontal="16dp"
-                        android:paddingVertical="8dp"
-                        android:text="Daily Tasks"
+                        android:paddingVertical="10dp"
+                        android:text="Task Scheduler"
                         android:textColor="#000000"
                         android:textSize="14sp"
                         android:textStyle="bold"
                         android:clickable="true"
                         android:focusable="true"/>
                     <TextView
-                        android:id="@+id/tabTourReminders"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/tabAiStudyPlan"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:background="@android:color/transparent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_marginStart="12dp"
+                        android:background="@drawable/task_badge_bg_light"
                         android:paddingHorizontal="16dp"
-                        android:paddingVertical="8dp"
-                        android:text="Tour Reminders"
-                        android:textColor="#888888"
+                        android:paddingVertical="10dp"
+                        android:text="AI Study Plan"
+                        android:textColor="#555555"
                         android:textSize="14sp"
-                        android:textStyle="normal"
+                        android:textStyle="bold"
                         android:clickable="true"
                         android:focusable="true"/>
                 </LinearLayout>
