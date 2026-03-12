@@ -262,12 +262,7 @@ public class DashboardActivity extends AppCompatActivity {
     private void setupBottomNavigation() {
         navHome.setOnClickListener(v -> {
             setActiveNavItem(navHome);
-            new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {
-                Intent intent = new Intent(DashboardActivity.this, MainActivity.class);
-                startActivity(intent);
-                overridePendingTransition(0, 0);
-                finish();
-            }, 120);
+            // Already on Dashboard — no navigation needed
         });
         navPlanner.setOnClickListener(v -> {
             setActiveNavItem(navPlanner);

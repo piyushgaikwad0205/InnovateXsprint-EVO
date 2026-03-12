@@ -97,7 +97,7 @@ public class ProfileActivity extends AppCompatActivity {
         navHome.setOnClickListener(v -> {
             setActiveNavItem(navHome);
             new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {
-                android.content.Intent intent = new android.content.Intent(ProfileActivity.this, MainActivity.class);
+                android.content.Intent intent = new android.content.Intent(ProfileActivity.this, DashboardActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();

@@ -37,7 +37,7 @@
             android:exported="true" />
         <activity
             android:name=".DashboardActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MusicActivity"
             android:exported="false" />

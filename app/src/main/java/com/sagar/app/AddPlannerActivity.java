@@ -113,7 +113,7 @@ public class AddPlannerActivity extends AppCompatActivity {
     private void setupBottomNavigation() {
         navHome.setOnClickListener(v -> {
             setActiveNavItem(navHome);
-            Intent intent = new Intent(AddPlannerActivity.this, MainActivity.class);
+            Intent intent = new Intent(AddPlannerActivity.this, DashboardActivity.class);
             startActivity(intent);
             overridePendingTransition(0, 0);
             finish();

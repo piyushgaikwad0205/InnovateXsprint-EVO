@@ -207,7 +207,7 @@ public class TrackerActivity extends AppCompatActivity {
     private void setupBottomNavigation() {
         navHome.setOnClickListener(v ->
             new Handler(Looper.getMainLooper()).postDelayed(() -> {
-                startActivity(new Intent(TrackerActivity.this, MainActivity.class));
+                startActivity(new Intent(TrackerActivity.this, DashboardActivity.class));
                 overridePendingTransition(0, 0);
                 finish();
             }, 120));

@@ -50,8 +50,8 @@ public class SplashActivity extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
             com.google.firebase.auth.FirebaseAuth mAuth = com.google.firebase.auth.FirebaseAuth.getInstance();
             if (mAuth.getCurrentUser() != null) {
-                // User is already signed in, go to MainActivity
-                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                // User is already signed in, go to DashboardActivity
+                startActivity(new Intent(SplashActivity.this, DashboardActivity.class));
             } else {
                 // No user signed in, go to LoginActivity
                 startActivity(new Intent(SplashActivity.this, LoginActivity.class));

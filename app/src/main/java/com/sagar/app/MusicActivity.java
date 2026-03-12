@@ -424,7 +424,7 @@ public class MusicActivity extends AppCompatActivity {
         navHome.setOnClickListener(v -> {
             setActiveNavItem(navHome);
             new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {
-                android.content.Intent intent = new android.content.Intent(MusicActivity.this, MainActivity.class);
+                android.content.Intent intent = new android.content.Intent(MusicActivity.this, DashboardActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();

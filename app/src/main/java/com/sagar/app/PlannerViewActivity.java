@@ -189,7 +189,7 @@ public class PlannerViewActivity extends AppCompatActivity {
         if (navHome != null) {
             navHome.setOnClickListener(v -> {
                 setActiveNavItem(navHome);
-                Intent intent = new Intent(PlannerViewActivity.this, MainActivity.class);
+                Intent intent = new Intent(PlannerViewActivity.this, DashboardActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.nav_fade_in, R.anim.nav_fade_out);
                 finish();

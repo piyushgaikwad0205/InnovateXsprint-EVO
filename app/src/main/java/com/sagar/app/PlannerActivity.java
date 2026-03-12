@@ -260,7 +260,7 @@ public class PlannerActivity extends AppCompatActivity {
         navHome.setOnClickListener(v -> {
             setActiveNavItem(navHome);
             new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {
-                Intent intent = new Intent(PlannerActivity.this, MainActivity.class);
+                Intent intent = new Intent(PlannerActivity.this, DashboardActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();

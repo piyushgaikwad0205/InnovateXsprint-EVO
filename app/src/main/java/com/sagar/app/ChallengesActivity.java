@@ -563,7 +563,7 @@ public class ChallengesActivity extends AppCompatActivity {
     private void setupBottomNavigation() {
         navHome.setOnClickListener(v -> {
             new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, DashboardActivity.class));
                 overridePendingTransition(0, 0);
                 finish();
             }, 100);
