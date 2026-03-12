@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "132491666323",
+    "project_id": "focus-flow-3d22e",
+    "storage_bucket": "focus-flow-3d22e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132491666323:android:cd28a376e6a5ae03a0be66",
+        "android_client_info": {
+          "package_name": "com.sagar.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132491666323-i132505q9qok1h08ceu7e5qhjdhgchej.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sagar.app",
+            "certificate_hash": "ef1980e6b943d6c6c130c832f707d51b816de4ff"
+          }
+        },
+        {
+          "client_id": "132491666323-ir8bnvd0lkec9rfmsdkc4u5ln9j83agp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk2XYwBlf19EmWWqvckxNrzgHHtGoPkMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132491666323-ir8bnvd0lkec9rfmsdkc4u5ln9j83agp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

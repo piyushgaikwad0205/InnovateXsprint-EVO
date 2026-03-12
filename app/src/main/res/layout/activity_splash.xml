@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_start_1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- ===== TOP-LEFT: Tall plant stem (solid accent at corner) ===== -->
+
+    <!-- ===== TOP-LEFT: Botanical branches radiating outward ===== -->
+
+    <!-- Top Right Decorative Leaf -->
+    <ImageView
+        android:id="@+id/ivSplashTopLeaf"
+        android:layout_width="148dp"
+        android:layout_height="145dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-10dp"
+        android:layout_marginEnd="-10dp"
+        android:contentDescription="Decorative leaf"
+        android:scaleType="fitEnd"
+        android:src="@drawable/ic_leaf_single" />
+
+    <!-- Center Logo Container -->
+    <ImageView
+        android:id="@+id/a_minimalis"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/focus_flow"
+        android:scaleType="fitCenter"
+        android:contentDescription="Focus Flow logo" />
+
+    <!-- Bottom Illustration -->
+    <ImageView
+        android:id="@+id/ivSplashBottomLeaves"
+        android:layout_width="match_parent"
+        android:layout_height="241dp"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_login_leaves_1" />
+
+    <!-- Tall Leaf Foreground -->
+    <ImageView
+        android:id="@+id/ivSplashTallLeaf"
+        android:layout_width="160dp"
+        android:layout_height="151dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-2dp"
+        app:srcCompat="@drawable/ic_leaf_tall" />
+
+</RelativeLayout>

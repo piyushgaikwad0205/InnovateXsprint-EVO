@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="352dp"
+    android:height="451dp"
+    android:viewportWidth="352"
+    android:viewportHeight="451">
+
+    <!-- Large Monstera leaf silhouette (filled) with splits as part of the boundary -->
+    <path
+        android:fillColor="#888888"
+        android:fillType="evenOdd"
+        android:pathData="
+        M 148,400
+        C 100,395 45,368 15,320
+        C -10,278 5,232 30,196
+        C 58,154 105,128 148,118
+        C 190,108 238,120 265,152
+        C 295,188 302,235 295,278
+        C 285,328 258,372 225,396
+        C 202,412 172,404 148,400 Z
+
+        M 48,318
+        C 35,305 25,285 28,265
+        C 30,248 42,232 30,208
+        C 20,192 10,175 16,158
+        C 22,175 38,188 42,205
+        C 46,222 38,242 45,258
+        C 52,274 58,296 48,318 Z
+
+        M 90,148
+        C 78,135 72,116 77,100
+        C 68,116 62,136 70,155
+        C 78,148 84,148 90,148 Z
+
+        M 205,128
+        C 222,120 240,118 255,128
+        C 240,118 222,112 205,128 Z
+
+        M 288,248
+        C 304,252 314,265 312,282
+        C 310,265 302,248 288,248 Z
+
+        M 258,358
+        C 272,362 280,376 278,390
+        C 272,376 265,360 258,358 Z
+
+        M 125,388
+        C 110,394 94,392 82,384
+        C 95,392 112,394 125,388 Z
+
+        M 128,212
+        C 137,206 150,208 158,216
+        C 168,226 165,240 158,248
+        C 162,236 162,218 148,210
+        C 138,204 124,210 128,212 Z
+
+        M 188,268
+        C 198,262 212,266 218,276
+        C 224,288 218,302 210,306
+        C 214,295 215,276 202,270
+        C 196,266 185,268 188,268 Z
+        "/>
+
+    <!-- Monstera stem -->
+    <path android:fillColor="#888888"
+        android:pathData="M148,400 C145,415 143,435 142,451 L158,451 C157,435 155,415 152,400 Z"/>
+
+    <!-- Central vein (white line on top) -->
+    <path android:fillColor="#00000000" android:strokeColor="#CCCCCC" android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M148,400 C152,360 158,320 165,280 C172,240 182,205 192,175 C200,150 212,135 222,120"/>
+
+    <!-- Secondary veins -->
+    <path android:fillColor="#00000000" android:strokeColor="#BBBBBB" android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M162,375 C140,368 112,365 85,372
+                          M165,345 C140,332 112,326 85,330
+                          M170,312 C148,296 122,285 95,282
+                          M178,278 C158,258 138,240 120,228
+                          M186,245 C170,222 158,198 152,175
+                          M194,215 C183,192 175,170 174,148
+                          M202,185 C196,162 194,140 198,120"/>
+
+    <!-- Smaller outlined leaf (upper right of viewport) -->
+    <path android:fillColor="#00000000" android:strokeColor="#888888" android:strokeWidth="2"
+        android:pathData="M295,120
+            C 312,105 336,100 348,112
+            C 352,128 345,150 332,162
+            C 318,174 300,175 290,164
+            C 282,152 283,135 295,120 Z"/>
+    <path android:fillColor="#00000000" android:strokeColor="#888888" android:strokeWidth="1.5"
+        android:pathData="M290,164 C308,148 330,142 348,148"/>
+    <path android:fillColor="#00000000" android:strokeColor="#888888" android:strokeWidth="1.5"
+        android:pathData="M293,140 L340,136"/>
+</vector>

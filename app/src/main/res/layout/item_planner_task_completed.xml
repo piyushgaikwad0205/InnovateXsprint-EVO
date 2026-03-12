@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/task_item_bg"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="12dp">
+
+    <TextView
+        android:id="@+id/tvTaskName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/ivCheck"
+        android:text="Send to Adarsh 100$"
+        android:textColor="#A5A5A5"
+        android:textSize="16sp"
+        android:alpha="0.6" />
+    
+    <!-- Using a view for strikethrough if needed, but for now I'll just rely on color and alpha -->
+
+    <FrameLayout
+        android:id="@+id/ivCheck"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/checkmark_circle_bg"
+        android:alpha="0.4">
+        
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_checkmark"
+            android:tint="#000000" />
+    </FrameLayout>
+
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Override the default system splash screen on Android 12+ (API 31+) -->
+    <style name="Theme.SagarApp" parent="Base.Theme.SagarApp">
+        <!-- Make the system splash background white to match our custom splash screen -->
+        <item name="android:windowSplashScreenBackground">#FFFFFF</item>
+        <!-- Hide the default app icon from the system splash screen -->
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/empty_splash_icon</item>
+    </style>
+</resources>

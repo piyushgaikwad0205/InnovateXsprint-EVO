@@ -1,0 +1,13 @@
+*.iml
+.gradle
+/local.properties
+/.idea/
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+*.zip
+gradle-8.0/
+.temp/
+.knownPackages/
