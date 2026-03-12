@@ -94,14 +94,15 @@ public class ChallengesActivity extends AppCompatActivity {
         setActiveNavItem();        // Challenges tab stays orange always
         updateStreakDisplay();
 
-        // Streak nav click → show global streak toast
-        LinearLayout navStreak = findViewById(R.id.navStreak);
-        if (navStreak != null) {
-            navStreak.setOnClickListener(v -> {
-                int s = getSharedPreferences("StreakPrefs", MODE_PRIVATE)
-                            .getInt("currentStreak", 0);
-                Toast.makeText(this,
-                    s + " day streak! 🔥 Keep going!", Toast.LENGTH_SHORT).show();
+        // Tracker nav click → open TrackerActivity
+        LinearLayout navTracker = findViewById(R.id.navTracker);
+        if (navTracker != null) {
+            navTracker.setOnClickListener(v -> {
+                new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {
+                    startActivity(new Intent(this, TrackerActivity.class));
+                    overridePendingTransition(0, 0);
+                    finish();
+                }, 100);
             });
         }
 
@@ -611,13 +612,9 @@ public class ChallengesActivity extends AppCompatActivity {
         int streak = getSharedPreferences("StreakPrefs", MODE_PRIVATE)
                          .getInt("currentStreak", 0);
 
-        // Nav badge
-        TextView tvNavBadge = findViewById(R.id.tvStreakNavBadge);
-        if (tvNavBadge != null) tvNavBadge.setText(String.valueOf(streak));
-
-        // Nav label
+        // Header streak badge
         TextView tvStreakCount = findViewById(R.id.tvStreakCount);
-        if (tvStreakCount != null) tvStreakCount.setText(streak + " day");
+        if (tvStreakCount != null) tvStreakCount.setText(String.valueOf(streak));
 
         // Header pill
         TextView tvHeaderStreak = findViewById(R.id.tvHeaderStreakCount);

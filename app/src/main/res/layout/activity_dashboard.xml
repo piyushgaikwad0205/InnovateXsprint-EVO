@@ -12,22 +12,61 @@
         android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:background="#FFFFFF">
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="20dp"
-            android:text="Dashboard's"
-            android:textColor="#111111"
-            android:textSize="32sp"
-            android:textStyle="bold" />
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvGreetingLine1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Good Morning,"
+                android:textColor="#7D000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvGreeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="there!!"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.02" />
+        </LinearLayout>
+
+        <!-- 🔥 Streak Badge top-right -->
+        <LinearLayout
+            android:id="@+id/streakBadgeHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="19dp"
-            android:src="@drawable/focus_flow" />
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_streak_pill_header"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔥"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tvStreakCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="0"
+                android:textColor="#FF6B35"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
     </RelativeLayout>
 
     <!-- Main Content Container with Home-like background and spacing -->
@@ -62,296 +101,650 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="4dp">
 
-                <!-- Stats Header -->
-                <RelativeLayout
+                <!-- ─── AI SUMMARY CARD ─── -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp">
-                    <TextView
-                        android:id="@+id/tvStatsMonth"
+                    android:background="@drawable/bg_ai_summary_card"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Stats"
-                        android:textColor="#111111"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="✨"
+                            android:textSize="16sp"
+                            android:layout_marginEnd="6dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ai Summary.."
+                            android:textColor="#111111"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_ai_text_box"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+                        <TextView
+                            android:id="@+id/tvAiSummaryText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Good Morning! Complete your priority tasks for today to maintain your streak. Focus on your highest priority items first and take short breaks between sessions."
+                            android:textColor="#222222"
+                            android:textSize="14sp"
+                            android:lineSpacingMultiplier="1.5" />
+                        <TextView
+                            android:id="@+id/tvRefreshAi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="8dp"
+                            android:text="Refresh it"
+                            android:textColor="#888888"
+                            android:textSize="12sp"
+                            android:textStyle="italic"
+                            android:clickable="true"
+                            android:focusable="true" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- ─── FOCUS TIME CARD ─── -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_white_bg"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_marginBottom="10dp"
+                    android:elevation="2dp">
+
                     <TextView
-                        android:id="@+id/tvLastUpdated"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Focus Time"
+                        android:textColor="#121417"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginBottom="20dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="4"
+                        android:gravity="center">
+
+                        <!-- Days -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="56dp"
+                                android:gravity="center"
+                                android:background="@drawable/bg_focus_counter">
+                                <TextView
+                                    android:id="@+id/tvFocusDays"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:textColor="#121417"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Days"
+                                android:textColor="#121417"
+                                android:textSize="13sp"
+                                android:gravity="center"
+                                android:layout_marginTop="8dp" />
+                        </LinearLayout>
+
+                        <!-- Hours -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="56dp"
+                                android:gravity="center"
+                                android:background="@drawable/bg_focus_counter">
+                                <TextView
+                                    android:id="@+id/tvFocusHours"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="00"
+                                    android:textColor="#121417"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Hours"
+                                android:textColor="#121417"
+                                android:textSize="13sp"
+                                android:gravity="center"
+                                android:layout_marginTop="8dp" />
+                        </LinearLayout>
+
+                        <!-- Minutes -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="56dp"
+                                android:gravity="center"
+                                android:background="@drawable/bg_focus_counter">
+                                <TextView
+                                    android:id="@+id/tvFocusMins"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="00"
+                                    android:textColor="#121417"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Minutes"
+                                android:textColor="#121417"
+                                android:textSize="13sp"
+                                android:gravity="center"
+                                android:layout_marginTop="8dp" />
+                        </LinearLayout>
+
+                        <!-- Seconds -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="56dp"
+                                android:gravity="center"
+                                android:background="@drawable/bg_focus_counter">
+                                <TextView
+                                    android:id="@+id/tvFocusSecs"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="00"
+                                    android:textColor="#121417"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Seconds"
+                                android:textColor="#121417"
+                                android:textSize="13sp"
+                                android:gravity="center"
+                                android:layout_marginTop="8dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Start Focus Time Button -->
+                <Button
+                    android:id="@+id/btnStartFocus"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Start Focus Time"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:background="@drawable/bg_focus_btn"
+                    android:elevation="6dp"
+                    android:stateListAnimator="@null" />
+
+                <!-- ─── ANALYTICS HEADER ─── -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="14dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Analytics"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:text="Last updated: --"
-                        android:textColor="#888888"
-                        android:textSize="12sp" />
+                        android:background="@drawable/bg_this_week_chip"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingStart="17dp"
+                        android:paddingEnd="17dp"
+                        android:paddingTop="9dp"
+                        android:paddingBottom="9dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="This Week"
+                            android:textColor="#000000"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:text="▾"
+                            android:textColor="#374151"
+                            android:textSize="12sp" />
+                    </LinearLayout>
                 </RelativeLayout>
 
-                <!-- Stats Row 1: Total + Completed -->
+                <!-- ─── QUICK STATS ROW ─── -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="12dp">
+                    android:layout_marginBottom="16dp">
 
-                    <!-- Total Tasks Card -->
+                    <!-- Study Time Card -->
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="110dp"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/bg_main_content_container"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:elevation="4dp">
-                        <TextView
-                            android:id="@+id/tvTotalTasks"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="0"
-                            android:textColor="#121417"
-                            android:textSize="40sp"
-                            android:textStyle="bold" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Total Tasks"
-                            android:textColor="#666666"
-                            android:textSize="13sp" />
-                    </LinearLayout>
-
-                    <!-- Completed Tasks Card -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="110dp"
-                        android:layout_weight="1"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/active_tab_bg"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:elevation="4dp">
-                        <TextView
-                            android:id="@+id/tvCompletedTasks"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="0"
-                            android:textColor="#FFFFFF"
-                            android:textSize="40sp"
-                            android:textStyle="bold" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Completed"
-                            android:textColor="#DDFFFFFF"
-                            android:textSize="13sp" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <!-- Stats Row 2: Pending + Completion Rate -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="24dp">
-
-                    <!-- Pending Tasks Card -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="110dp"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/task_item_bg"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:elevation="4dp">
-                        <TextView
-                            android:id="@+id/tvPendingTasks"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="0"
-                            android:textColor="#FF5252"
-                            android:textSize="40sp"
-                            android:textStyle="bold" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Pending"
-                            android:textColor="#888888"
-                            android:textSize="13sp" />
-                    </LinearLayout>
-
-                    <!-- Completion Rate Card -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="110dp"
-                        android:layout_weight="1"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/task_item_bg"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:elevation="4dp">
-                        <TextView
-                            android:id="@+id/tvCompletionRate"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="0%"
-                            android:textColor="#4CAF50"
-                            android:textSize="36sp"
-                            android:textStyle="bold" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Completion"
-                            android:textColor="#888888"
-                            android:textSize="13sp" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <!-- Progress Section -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Overall Progress"
-                    android:textColor="#505050"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp" />
-
-                <ProgressBar
-                    android:id="@+id/progressCompletion"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="12dp"
-                    android:progress="0"
-                    android:max="100"
-                    android:progressTint="#121417"
-                    android:progressBackgroundTint="#E0E0E0"
-                    android:layout_marginBottom="24dp" />
-
-                <!-- Tip Card -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_main_content_container"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:layout_marginTop="8dp">
-                    <TextView
-                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="💡 Focus Tip"
-                        android:textColor="#121417"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="6dp" />
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/card_white_bg"
+                        android:orientation="vertical"
+                        android:padding="17dp"
+                        android:elevation="2dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Study Time"
+                            android:textColor="#555555"
+                            android:textSize="12sp"
+                            android:layout_marginBottom="4dp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="8dp">
+                            <TextView
+                                android:id="@+id/tvCompletedTasks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="#000000"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="h"
+                                android:textColor="#000000"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:layout_marginStart="2dp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" 📚"
+                                android:textSize="22sp"
+                                android:layout_marginStart="6dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_stat_green_pill"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp">
+                            <TextView
+                                android:id="@+id/tvStudyTrend"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+0% vs last week"
+                                android:textColor="#008353"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Focus Score Card -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/card_white_bg"
+                        android:orientation="vertical"
+                        android:padding="17dp"
+                        android:elevation="2dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Focus Score"
+                            android:textColor="#555555"
+                            android:textSize="12sp"
+                            android:layout_marginBottom="4dp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="8dp">
+                            <TextView
+                                android:id="@+id/tvCompletionRate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0%"
+                                android:textColor="#000000"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" 🎯"
+                                android:textSize="22sp"
+                                android:layout_marginStart="6dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_stat_green_pill"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp">
+                            <TextView
+                                android:id="@+id/tvFocusTrend"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+0% improvement"
+                                android:textColor="#008353"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- ─── STUDY HOURS CHART (Dark Card) ─── -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_dark_card"
+                    android:orientation="vertical"
+                    android:padding="21dp"
+                    android:layout_marginBottom="16dp">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Complete your pending tasks one at a time. Small steps lead to big achievements! Use the Planner to add and track your goals."
-                        android:textColor="#555555"
-                        android:textSize="13sp"
-                        android:lineSpacingMultiplier="1.4" />
-                </LinearLayout>
+                        android:text="Study Hours"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Weekly trend"
+                        android:textColor="#A0A7B8"
+                        android:textSize="12sp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="16dp" />
 
-                <!-- Stats Tab -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_marginBottom="40dp">
+                    <!-- Bar Chart — bottom-aligned bars -->
                     <LinearLayout
-                        android:layout_width="197dp"
-                        android:layout_height="37dp"
-                        android:background="@drawable/stats_tab_bg"
-                        android:orientation="vertical"
-                        android:gravity="center_horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="STATS"
-                            android:textColor="#616161"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:letterSpacing="0.1" />
-                        <View
-                            android:layout_width="173dp"
-                            android:layout_height="3dp"
-                            android:background="#000000"
-                            android:layout_marginBottom="3dp" />
+                        android:layout_width="match_parent"
+                        android:layout_height="105dp"
+                        android:orientation="horizontal"
+                        android:gravity="bottom"
+                        android:weightSum="7">
+
+                        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="bottom|center_horizontal">
+                            <View android:layout_width="10dp" android:layout_height="60dp" android:background="@drawable/bg_teal_bar" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="M" android:textColor="#A0A7B8" android:textSize="10sp" android:layout_marginTop="6dp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="bottom|center_horizontal">
+                            <View android:layout_width="10dp" android:layout_height="75dp" android:background="@drawable/bg_teal_bar" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="T" android:textColor="#A0A7B8" android:textSize="10sp" android:layout_marginTop="6dp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="bottom|center_horizontal">
+                            <View android:layout_width="10dp" android:layout_height="90dp" android:background="@drawable/bg_teal_bar" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="W" android:textColor="#A0A7B8" android:textSize="10sp" android:layout_marginTop="6dp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="bottom|center_horizontal">
+                            <View android:layout_width="10dp" android:layout_height="52dp" android:background="@drawable/bg_teal_bar" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="T" android:textColor="#A0A7B8" android:textSize="10sp" android:layout_marginTop="6dp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="bottom|center_horizontal">
+                            <View android:layout_width="10dp" android:layout_height="88dp" android:background="@drawable/bg_teal_bar" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="F" android:textColor="#A0A7B8" android:textSize="10sp" android:layout_marginTop="6dp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="bottom|center_horizontal">
+                            <View android:layout_width="10dp" android:layout_height="38dp" android:background="@drawable/bg_teal_bar" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="S" android:textColor="#A0A7B8" android:textSize="10sp" android:layout_marginTop="6dp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="bottom|center_horizontal">
+                            <View android:layout_width="10dp" android:layout_height="45dp" android:background="@drawable/bg_teal_bar" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="S" android:textColor="#A0A7B8" android:textSize="10sp" android:layout_marginTop="6dp" />
+                        </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Feb Stats Section -->
-                <RelativeLayout
+                <!-- ─── TIME BY SUBJECT CARD (task priority breakdown) ─── -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp">
+                    android:background="@drawable/card_white_bg"
+                    android:orientation="vertical"
+                    android:padding="21dp"
+                    android:layout_marginBottom="16dp"
+                    android:elevation="2dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Feb 4th Week's Stats"
-                        android:textColor="#505050"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:text="Time by Subject"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp" />
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <!-- Simple ring (ProgressBar) -->
+                        <FrameLayout
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginEnd="20dp">
+                            <ProgressBar
+                                android:id="@+id/progressSubjectRing"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:rotation="-90"
+                                android:progressDrawable="@drawable/bg_ring_progress"
+                                android:max="100"
+                                android:progress="60" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center">
+                                <TextView
+                                    android:id="@+id/tvTotalTasks"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:textColor="#000000"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Total"
+                                    android:textColor="#A0A7B8"
+                                    android:textSize="9sp"
+                                    android:textAllCaps="true" />
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <!-- Subject list -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="10dp">
+                                <View android:layout_width="8dp" android:layout_height="8dp" android:background="@drawable/bg_dot_grey" />
+                                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="10dp" android:text="Completed" android:textColor="#6C7172" android:textSize="13sp" />
+                                <TextView android:id="@+id/tvSubCompleted" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="#000000" android:textSize="13sp" android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="10dp">
+                                <View android:layout_width="8dp" android:layout_height="8dp" android:background="@drawable/bg_dot_orange" />
+                                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="10dp" android:text="Pending" android:textColor="#6C7172" android:textSize="13sp" />
+                                <TextView android:id="@+id/tvSubPending" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="#000000" android:textSize="13sp" android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="10dp">
+                                <View android:layout_width="8dp" android:layout_height="8dp" android:background="@drawable/bg_dot_green" />
+                                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="10dp" android:text="High Priority" android:textColor="#6C7172" android:textSize="13sp" />
+                                <TextView android:id="@+id/tvHighTasks" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="#000000" android:textSize="13sp" android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                                <View android:layout_width="8dp" android:layout_height="8dp" android:background="@drawable/bg_dot_grey" />
+                                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="10dp" android:text="Medium / Low" android:textColor="#6C7172" android:textSize="13sp" />
+                                <TextView android:id="@+id/tvMedLowTasks" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="#000000" android:textSize="13sp" android:textStyle="bold" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- ─── AI INSIGHTS ─── -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="AI Insights"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Insight 1 (green) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_insight_dark1"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="17dp"
+                    android:layout_marginBottom="12dp">
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_insight_icon_green"
+                        android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🌱" android:textSize="18sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="14dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Your best focus time:" android:textColor="#FFFFFF" android:textSize="14sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="9 – 11 AM" android:textColor="#34D399" android:textSize="14sp" android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Insight 2 (purple) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_insight_dark2"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="17dp"
+                    android:layout_marginBottom="24dp">
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_insight_icon_purple"
+                        android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚡" android:textSize="18sp" />
+                    </LinearLayout>
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:text="Show All"
-                        android:textColor="#121417"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-            </RelativeLayout>
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:text="Complete more tasks to boost your weekly focus score!"
+                        android:textColor="#C084FC"
+                        android:textSize="14sp" />
+                </LinearLayout>
 
-            <!-- Bar Chart placeholder (custom implementation) -->
-            <include layout="@layout/view_bar_chart_heavy" />
+                <!-- Hidden legacy views (keep IDs for Java compat) -->
+                <TextView android:id="@+id/tvPendingTasks" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+                <TextView android:id="@+id/tvStatsMonth" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+                <TextView android:id="@+id/tvLastUpdated" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+                <ProgressBar android:id="@+id/progressCompletion" style="?android:attr/progressBarStyleHorizontal" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="40dp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 
-            <!-- Jan Stats Section -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Jan 4th Week's Stats"
-                    android:textColor="#505050"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:text="Show All"
-                    android:textColor="#121417"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-            <!-- Light Bar Chart -->
-            <include layout="@layout/view_bar_chart_light" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="40dp" />
-
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
-
-    <!-- Bottom Navigation Container (Simplified) -->
+    <!-- Bottom Navigation Container -->
     <RelativeLayout
         android:id="@+id/bottomNavContainer"
         android:layout_width="match_parent"
@@ -417,14 +810,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Tour"
+                    android:text="Planner"
                     android:textColor="#888888"
                     android:textSize="12sp" />
             </LinearLayout>
 
-            <!-- Streak -->
+            <!-- Tracker -->
             <LinearLayout
-                android:id="@+id/navStreak"
+                android:id="@+id/navTracker"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -433,20 +826,19 @@
                 android:clickable="true"
                 android:focusable="true">
                 <ImageView
-                    android:id="@+id/ivStreak"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:src="@drawable/ic_fire"
-                    android:tint="#FF6B35" />
+                    android:id="@+id/ivTracker"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_graph_new"
+                    android:tint="#888888" />
                 <TextView
-                    android:id="@+id/tvStreakCount"
+                    android:id="@+id/tvTrackerLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="0"
-                    android:textColor="#FF6B35"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="4dp"
+                    android:text="Tracker"
+                    android:textColor="#888888"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <!-- Challenges -->

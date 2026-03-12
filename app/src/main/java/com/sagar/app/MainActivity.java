@@ -154,13 +154,16 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        // Set up streak click handler
-        LinearLayout navStreak = findViewById(R.id.navStreak);
-        if (navStreak != null) {
-            navStreak.setOnClickListener(v -> {
-                android.widget.Toast.makeText(this, "Current streak: " +
-                        getSharedPreferences("StreakPrefs", MODE_PRIVATE).getInt("currentStreak", 0) + " days! 🔥",
-                        android.widget.Toast.LENGTH_SHORT).show();
+        // Set up tracker nav (was streak nav)
+        LinearLayout navTracker = findViewById(R.id.navTracker);
+        if (navTracker != null) {
+            navTracker.setOnClickListener(v -> {
+                new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {
+                    android.content.Intent intent = new android.content.Intent(MainActivity.this, TrackerActivity.class);
+                    startActivity(intent);
+                    overridePendingTransition(0, 0);
+                    finish();
+                }, 120);
             });
         }
 

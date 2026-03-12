@@ -82,10 +82,33 @@
         </LinearLayout>
     </LinearLayout>
 
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@drawable/ic_chevron_right"
-        android:tint="#AAAAAA" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginStart="8dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_chevron_right"
+            android:tint="#AAAAAA" />
+
+        <TextView
+            android:id="@+id/btnAddSlot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="+ Add"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="#4E7BFE"
+            android:background="@drawable/bg_add_slot_btn"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
 
 </LinearLayout>

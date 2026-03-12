@@ -331,14 +331,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Tour"
+                    android:text="Planner"
                     android:textColor="#888888"
                     android:textSize="11sp" />
             </LinearLayout>
 
-            <!-- Streak (Center - with badge) -->
+            <!-- Tracker -->
             <LinearLayout
-                android:id="@+id/navStreak"
+                android:id="@+id/navTracker"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -346,45 +346,20 @@
                 android:orientation="vertical"
                 android:clickable="true"
                 android:focusable="true">
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:src="@drawable/ic_fire"
-                        android:tint="#FF6B35" />
-
-                    <TextView
-                        android:id="@+id/tvStreakNavBadge"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginTop="-4dp"
-                        android:layout_marginEnd="-6dp"
-                        android:background="@drawable/bg_streak_pill_header"
-                        android:paddingStart="5dp"
-                        android:paddingTop="1dp"
-                        android:paddingEnd="5dp"
-                        android:paddingBottom="1dp"
-                        android:text="0"
-                        android:textColor="#FF6B35"
-                        android:textSize="9sp"
-                        android:textStyle="bold" />
-                </RelativeLayout>
-
+                <ImageView
+                    android:id="@+id/ivTracker"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_graph_new"
+                    android:tint="#888888" />
                 <TextView
-                    android:id="@+id/tvStreakCount"
+                    android:id="@+id/tvTrackerLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="Streak"
-                    android:textColor="#FF6B35"
-                    android:textSize="11sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="4dp"
+                    android:text="Tracker"
+                    android:textColor="#888888"
+                    android:textSize="11sp" />
             </LinearLayout>
 
             <!-- Challenges (ACTIVE - orange) -->

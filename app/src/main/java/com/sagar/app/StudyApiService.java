@@ -16,9 +16,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class StudyApiService {
 
-    // TODO: Replace with your Railway URL (must include trailing slash), e.g.:
-    // https://your-railway-app.up.railway.app/
-    private static final String BASE_URL = "https://your-railway-app.up.railway.app/";
+    // Deployed backend (Render). Must end with trailing slash.
+    private static final String BASE_URL = "https://piyush1225-new-spaces-for-app.hf.space/";
 
     private static Retrofit retrofit;
 

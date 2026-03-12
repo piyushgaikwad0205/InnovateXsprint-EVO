@@ -59,6 +59,38 @@
             android:scaleType="fitEnd"
             android:src="@drawable/ic_person_desk" />
 
+        <!-- 🔥 Streak Badge (top-right, over the image) -->
+        <LinearLayout
+            android:id="@+id/streakBadgeHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_streak_pill_header"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔥"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/tvStreakCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:text="0"
+                android:textColor="#FF6B35"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
     </RelativeLayout>
 
     <!-- ===== GREY CONTAINER (FIXED - EXTENDS BEHIND NAV FOR TRANSPARENT EFFECT) ===== -->
@@ -514,14 +546,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Tour"
+                    android:text="Planner"
                     android:textColor="#888888"
                     android:textSize="12sp" />
             </LinearLayout>
 
-            <!-- Streak (Center) -->
+            <!-- Tracker (Center) -->
             <LinearLayout
-                android:id="@+id/navStreak"
+                android:id="@+id/navTracker"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -530,20 +562,19 @@
                 android:clickable="true"
                 android:focusable="true">
                 <ImageView
-                    android:id="@+id/ivStreak"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:src="@drawable/ic_fire"
-                    android:tint="#FF6B35" />
+                    android:id="@+id/ivTracker"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_graph_new"
+                    android:tint="#888888" />
                 <TextView
-                    android:id="@+id/tvStreakCount"
+                    android:id="@+id/tvTrackerLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="0"
-                    android:textColor="#FF6B35"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="4dp"
+                    android:text="Tracker"
+                    android:textColor="#888888"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <!-- Challenges -->
